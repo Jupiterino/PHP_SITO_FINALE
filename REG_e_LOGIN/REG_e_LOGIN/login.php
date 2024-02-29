@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('conness.php');
 ?>
 
@@ -14,34 +15,47 @@ include('conness.php');
       
       $name = $_POST['name'];
       $pw = $_POST['pw'];
-
+      
+      if(empty($name) || empty($pw)){
+        $_SESSION['errore'] = "MANCA QUALCHE DATO ...";
+        header('Location: errore.php');
+      }
 
       $sql =
-        "SELECT utente.username FROM utente
-        WHERE utente.username = '$name'";
+        "SELECT utente.username, utente.pwd FROM utente
+          WHERE utente.username = '$name'";
 
-      if(empty($name) || empty($pw)){
-        echo "<h1>ERRORE MANCA QUALCHE DATO ...</h1>";
-      }
-      if ($conn->query($sql)) {
-        $sql2 =
-        "SELECT utente.username, utente.password FROM utente
-        WHERE utente.username = $name AND
-        utente.pwd = '$pw'";
-        if ($conn->query($sql2)) {
-          echo "siiii";
+      
+      $result = $conn->query($sql);
+      if ($result == FALSE) {
+        $_SESSION['errore'] = " QUALCOSA NON VA ...";
+        header('Location: errore.php');
+      } else {
+        if ($result->num_rows == 0) {
+          $_SESSION['errore'] = $name . " NON SEI ANCORA REGISTATO!!!";
+          header('Location: errore.php');
+        } else {
+          $row = $result->fetch_assoc();
+          $p = $row["pwd"];
+          if ($pw == $p) {
+            $_SESSION['username'] = $name;
+            header('Location: benvenuto.php');
+          } else {
+            $_SESSION['errore'] = $name . " HAI SBAGLIATO PASSWORD!!!";
+            header('Location: errore.php');
+          }
+
+
+
         }
       }
-      else {
-        echo "errore utente non trovato";
-      }
-      $conn->close();
 
-      echo "<br><br><a href=\"paginalogin.html\">
-            <input type=\"button\" value=\"TORNA INDIETRO\"<br><br>
-            </a>";
+
+
         ?>
-    <a href="pagina.html">Vai alla home page</a>
+<br><br><a href="paginalogin.html">
+            <input type="button" value="TORNA INDIETRO"><br><br>
+            </a>
 </body>
 </html>
             

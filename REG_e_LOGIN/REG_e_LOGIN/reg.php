@@ -34,7 +34,7 @@ include('conness.php');
       $conn->close();
     ?>
     
-    <a href="paginaregistrazione.html">Vai alla home page</a>
+    
 </body>
 </html>
 
