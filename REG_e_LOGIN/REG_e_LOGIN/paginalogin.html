@@ -8,35 +8,131 @@
     <link rel="stylesheet" href="../../PHP1/PHP1/style.css"><title>Document</title>
 </head>
 <body class="bodyy">
-    <div class="megadiv container " style="text-align: center;">
+    <div class="megadiv container megga" style="text-align: center;">
         <h1>TEATRO MOSCARDINI</h1>
-        <div class="login">
+        <div class="login" style="padding-bottom: 5%;">
             
             <h2 style="font-size: 400%;">ACCEDI</h2>
-            <form action="login.php" method="POST" class=" container row">
+            <form action="login.php" method="POST" class=" container row" >
                 <div class="col-6">
-                    username: <input type="text" class="inserimento" name="name"><br>
+                    <p>username: </p>
+                    <input type="text" class="inserimento" name="name"><br>
                 </div>
                 <div class="col-6">
-                    password: <input type="text" class="inserimento" name="pw"><br>
+                    <p>password: </p>
+                    <input type="text" class="inserimento" name="pw"><br>
                 </div>
-                <div class="col-12" style="padding-top: 12%; font-size: 200%;">
+                <div class="col-12" style="font-size: 200%;">
                     <input type="submit" class="botto" value="ACCEDI">  
                 </div>
                 
                 </form>
         </div>
         <div style="padding-top: 4%;">
-            <h3>oppure</h3>
-            <h2>REGISTRATI e crea un nuovo account</h2>
+            <h3 >oppure</h3>
+            <h3 >REGISTRATI e crea un nuovo account</h3>
             <div style="padding-top: 2%;">
               <a href="paginaregistrazione.html" >
                 <button class="botto"  >REGISTRATI</button>
             </a>  
             </div>
             
+        </div> <br><br><br>
+    </div>
+    <div class="megadiv container " style="text-align: center;">
+        <br><br><h1>LE NOSTRE FUNZIONALITA'</h1><br><br>
+    <div class="container row">
+        <form action="../../PHP1/PHP1/tabella.php" method="POST" class="container row">
+        <div class="col-3">
+            
+            <input type="submit" value="attori" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn"> <br>
+            <form action="../../PHP1/PHP1/select.php">
+                <input type="checkbox" id="vehicle1" name="Nome" value="Nome">
+                <label for="vehicle1" > Nome</label><br>
+                <input type="checkbox" id="vehicle2" name="AnnoNascita" value="AnnoNascita">
+                <label for="vehicle2"> AnnoNascita</label><br>
+                <input type="checkbox" id="vehicle3" name="Nazionalita" value="Nazionalita">
+                <label for="vehicle3"> Nazionalita</label><br><br>
+                <input type="submit" value="Submit" class="botto">
+              </form>
+        
         </div>
+        <div class="col-3">
+            
+            <input type="submit" value="film" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn">
+        
+        </div>
+        <div class="col-3">
+            
+            <input type="submit" value="sale" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn">
+        
+        </div>
+        <div class="col-3">
+            
+            <input type="submit" value="recensioni" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn">
+        
+        </div>
+
+    </form>
     </div>
     
+        
+        
+        
+    </div>
+    <div class="container row sss" style="text-align: center; margin: auto; padding-top:10%;">
+        <div class="col-4">
+            <div class="scatola" style="padding: 3%">
+                <h1>INSERISCI ATTORE</h1>
+                <form action="inserisci.php" method="POST">
+
+                    <label>First name:</label><br>
+                    <input type="text" name="name" class="form-control"><br>
+
+                    <label>Born_date:</label><br>
+                    <input type="number" name="bday" class="form-control"><br>
+
+                    <label>Nationality:</label><br>
+                    <input type="text" name="nationality" class="form-control"><br><br>
+
+                    <input type="submit" value="Submit" class="btn" style="background-color: rgb(175, 175, 175);">
+
+                </form>
+            </div>
+        </div>
+
+
+        <div class="col-4">
+            <div class="scatola" style="padding: 3%">
+                <h1>ELIMINA PROIEZIONE</h1>
+                <form action="elimina.php" method="POST">
+
+                    <label>codice proiezione:</label><br>
+                    <input type="text" name="codpro" class="form-control"><br><br>
+
+                    <input type="submit" value="Submit" class="btn"
+                        style="background-color: rgb(175, 175, 175);"><br><br>
+
+                </form>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="scatola" style="padding: 3%">
+                <h1>AGGIORNA VOTO</h1>
+                <form action="aggiorna.php" method="POST">
+
+                    <label>codice id:</label><br>
+                    <input type="text" name="id" class="form-control"><br>
+
+                    <label>voto:</label><br>
+                    <input type="number" name="voto" class="form-control"><br><br>
+
+                    <input type="submit" value="Submit" class="btn" style="background-color: rgb(175, 175, 175);">
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
 </body>
 </html>

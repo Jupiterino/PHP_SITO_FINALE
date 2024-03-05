@@ -32,8 +32,10 @@
             die("Connection failed: " . $conn->connect_error);
         }
         $table = $_POST['tabella'];
-
-        $sql = "SELECT * FROM $table";
+        foreach($_POST as $column){
+            $sql = "SELECT $column FROM $table";
+        };
+        
         $result = $conn->query($sql);
         $count = 0;
         if (mysqli_num_rows($result) > 0) {
