@@ -100,3 +100,13 @@ label {
   font-size: larger;
   padding-bottom: 17%;
 }
+
+.tit{
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 500%;
+    padding-bottom: 5%;
+  
+}

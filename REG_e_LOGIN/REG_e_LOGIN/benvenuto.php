@@ -16,14 +16,22 @@ include('conness.php');
 </head>
 <body class="bodyy"> 
              
-      <?php
+      
+        <div class="megadiv container megga" style="text-align: center;">
+        <h1>TEATRO MOSCARDINI</h1>
+        <div class="login" style="padding-bottom: 5%;">
+            <h2 style="font-size: 400%;">
+            <?php
       echo $_SESSION['username'] . " ECCOTI QUA";
 
         ?>
+        </h2>
+        </div>
+        
     <br>
     <br>
-    <a href="paginalogin.html" class="botto">
-    <input type="button" class="btn" value="TORNA INDIETRO"><br><br>
+    <a href="paginalogin.html" >
+    <input type="button" class=" botto" value="TORNA INDIETRO">
     </a>
 </body>
 </html>
