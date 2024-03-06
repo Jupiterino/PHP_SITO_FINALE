@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('conness.php');
 ?>
 
@@ -25,10 +26,12 @@ include('conness.php');
     
 
     if ($conn->query($sql)) {
-        echo "<p>Inserimento andato a buon fine</p>";
+        $_SESSION['messaggio'] = "REGISTRAZIONE ANDATA A BUON FINE";
+        header('Location: messaggio.php');
     } else {
         echo $conn -> error;
-        echo "<p style='color:red'>Errore</p>";
+        $_SESSION['messaggio'] = "ERRORE";
+        header('Location: messaggio.php');
     }
     
       $conn->close();

@@ -11,9 +11,9 @@
   <title>Document</title>
 </head>
 <body class="bodyy">
-    <div class="container row sss" style="text-align: center; margin: auto; padding-top:10%;">
+    <div class="container row sss" style="text-align: center; margin: auto; padding-top:6%;">
         <div class="col-12">
-            <div class="scatolaa" style="padding: 3%;">
+            <div class="scatolaa" style="padding: 1%;">
                 
                 
    
@@ -38,7 +38,7 @@
         $count = 0;
         if (mysqli_num_rows($result) > 0) {
             echo "<h1>$table</h1>";
-        echo '<table class=\'table table-dark\'>';
+        echo '<table class=\'scat\'>';
         echo "<br><br>";
         while($row = mysqli_fetch_assoc($result)){
             if($count == 0){

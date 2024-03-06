@@ -18,8 +18,8 @@ include('conness.php');
         <div class="login" style="padding-bottom: 5%;">
             <h2 style="font-size: 400%;">
         <?php
-            echo $_SESSION['errore'];
-            unset($_SESSION['errore']);
+            echo $_SESSION['messaggio'];
+            unset($_SESSION['messaggio']);
         ?>
         </h2>
         </div>

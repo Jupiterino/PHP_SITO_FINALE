@@ -42,38 +42,41 @@
     <div class="megadiv container " style="text-align: center;">
         <br><br><h1>LE NOSTRE FUNZIONALITA'</h1><br><br>
     <div class="container row">
-        <form action="../../PHP1/PHP1/tabella.php" method="POST" class="container row">
+  
         <div class="col-3">
+            <form action="../../PHP1/PHP1/tabella.php" method="POST">
+                 <input type="submit" value="attori" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn varieclassi"> <br>
+            </form>
+                 <form action="../../PHP1/PHP1/select.php" method="POST" class="formm">
             
-            <input type="submit" value="attori" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn"> <br>
-            <form action="../../PHP1/PHP1/select.php">
-                <input type="checkbox" id="vehicle1" name="Nome" value="Nome">
+           
+                <input type="checkbox" id="vehicle1" name="prova[]" value="Nome">
                 <label for="vehicle1" > Nome</label><br>
-                <input type="checkbox" id="vehicle2" name="AnnoNascita" value="AnnoNascita">
+                <input type="checkbox" id="vehicle2" name="prova[]" value="AnnoNascita">
                 <label for="vehicle2"> AnnoNascita</label><br>
-                <input type="checkbox" id="vehicle3" name="Nazionalita" value="Nazionalita">
+                <input type="checkbox" id="vehicle3" name="prova[]" value="Nazionalita">
                 <label for="vehicle3"> Nazionalita</label><br><br>
-                <input type="submit" value="Submit" class="botto">
+                <input type="submit" value="attori" class="botto" name="attori">
               </form>
         
         </div>
         <div class="col-3">
-            
-            <input type="submit" value="film" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn">
-        
+            <form action="../../PHP1/PHP1/tabella.php" method="POST">
+            <input type="submit" value="film" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn varieclassi">
+            </form>
         </div>
         <div class="col-3">
-            
-            <input type="submit" value="sale" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn">
-        
+            <form action="../../PHP1/PHP1/tabella.php" method="POST">
+            <input type="submit" value="sale" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn varieclassi">
+            </form>
         </div>
         <div class="col-3">
-            
-            <input type="submit" value="recensioni" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn">
-        
+            <form action="../../PHP1/PHP1/tabella.php" method="POST">
+            <input type="submit" value="recensioni" style="text-decoration: none; color: rgb(231, 231, 231);" name="tabella" class="btn varieclassi">
+            </form>
         </div>
 
-    </form>
+
     </div>
     
         

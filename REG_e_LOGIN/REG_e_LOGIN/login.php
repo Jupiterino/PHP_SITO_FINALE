@@ -17,8 +17,8 @@ include('conness.php');
       $pw = $_POST['pw'];
       
       if(empty($name) || empty($pw)){
-        $_SESSION['errore'] = "MANCA QUALCHE DATO ...";
-        header('Location: errore.php');
+        $_SESSION['messaggio'] = "MANCA QUALCHE DATO ...";
+        header('Location: messaggio.php');
       }
 
       $sql =
@@ -28,12 +28,12 @@ include('conness.php');
       
       $result = $conn->query($sql);
       if ($result == FALSE) {
-        $_SESSION['errore'] = " QUALCOSA NON VA ...";
-        header('Location: errore.php');
+        $_SESSION['messaggio'] = " NON SEI ANCORA REGISTATO!!!";
+        header('Location: messaggio.php');
       } else {
         if ($result->num_rows == 0) {
-          $_SESSION['errore'] = $name . " NON SEI ANCORA REGISTATO!!!";
-          header('Location: errore.php');
+          $_SESSION['messaggio'] = $name . " NON SEI ANCORA REGISTATO!!!";
+          header('Location: messaggio.php');
         } else {
           $row = $result->fetch_assoc();
           $p = $row["pwd"];
@@ -41,8 +41,8 @@ include('conness.php');
             $_SESSION['username'] = $name;
             header('Location: benvenuto.php');
           } else {
-            $_SESSION['errore'] = $name . " HAI SBAGLIATO PASSWORD!!!";
-            header('Location: errore.php');
+            $_SESSION['messaggio'] = $name . " HAI SBAGLIATO PASSWORD!!!";
+            header('Location: messaggio.php');
           }
 
 

@@ -11,9 +11,9 @@
   <title>Document</title>
 </head>
 <body class="bodyy">
-    <div class="container row sss" style="text-align: center; margin: auto; padding-top:10%;">
+    <div class="container row sss" style="text-align: center; margin: auto; padding-top:6%;">
         <div class="col-12">
-            <div class="scatolaa" style="padding: 3%;">
+            <div class="scatolaa" style="padding: 1%;">
                 
                 
    
@@ -31,29 +31,43 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $table = $_POST['tabella'];
-        foreach($_POST as $column){
-            $sql = "SELECT $column FROM $table";
-        };
-        
+
+
+
+        $table = $_POST['attori'];
+
+        $list = $_POST['prova'];
+        $sql = "SELECT ";
+        for($i=0; $i< count($list); $i++){
+            $sql .= $list[$i];
+            if($i != count($list)-1){
+                $sql .= ", ";
+            }
+        }
+        $sql .= " FROM $table";
         $result = $conn->query($sql);
-        $count = 0;
+
+        echo "<table class='scat'>";
+
         if (mysqli_num_rows($result) > 0) {
             echo "<h1>$table</h1>";
-        echo '<table class=\'table table-dark\'>';
+        echo '<table class=\'scat\'>';
         echo "<br><br>";
+        $count = 0;
         while($row = mysqli_fetch_assoc($result)){
+            
             if($count == 0){
                 foreach ($row as $chiave => $y) {
                     echo "<td>" . "<p style=\"pappa\">$chiave</p>"  . "</td>";
                     }
             }
+            $count ++;
             echo "<tr>";
             foreach ($row as $value) {
             echo "<td>" . $value . "</td>";
             }
             echo "</tr>";
-            $count ++;
+            
         }
         echo '</table><br />';
         
