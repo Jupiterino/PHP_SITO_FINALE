@@ -17,6 +17,10 @@
                 
             
       <?php
+      if( is_null($_SESSION['loggato']) ){
+                
+        header("Location: paginalogin.html");
+    }
       $servername = "localhost";
       $username = "root";
       $password = "";

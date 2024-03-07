@@ -1,6 +1,8 @@
 <?php
 session_start();
 include('conness.php');
+$_SESSION['loggato']="log";
+unset($_SESSION['messaggio']);
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +19,10 @@ include('conness.php');
       $pw = $_POST['pw'];
       
       if(empty($name) || empty($pw)){
+        $_SESSION['messaggio'] = "MANCA QUALCHE DATO ...";
+        header('Location: messaggio.php');
+      }
+      if(empty($name) && empty($pw)){
         $_SESSION['messaggio'] = "MANCA QUALCHE DATO ...";
         header('Location: messaggio.php');
       }

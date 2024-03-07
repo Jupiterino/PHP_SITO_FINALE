@@ -13,14 +13,18 @@ include('conness.php');
 <body>
 
     <?php
-    
+    if( is_null($_SESSION['loggato']) ){
+                
+        header("Location: paginalogin.html");
+    }
+
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     $username = $_POST["username"];
 
-    
+
     $sql =  "INSERT INTO utente (ID, username, pwd, nome, cognome, email, dataregistrazione)
     VALUES (NULL, '$username', '$password', '$nome', '$cognome', '$email', current_timestamp() )";
     
